@@ -1,0 +1,44 @@
+<nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">Notes App</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/About">About</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                {{#if user}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Notes
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/notes">All notes</a></li>
+                        <li><a class="dropdown-item" href="/notes/add">Add notes</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/users/logout">Logout</a></li>
+                    </ul>
+                </li>
+                {{else}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/users/signin">SignIn</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/users/signup">SignUp</a>
+                </li>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+</nav>
